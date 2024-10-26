@@ -10,7 +10,7 @@ export default async function handler(req) {
   const subscription = await req.json();
   
   // Store the subscription in Edge Config (assumed to be set up)
-  await YOUR_EDGE_CONFIG_STORE.set(subscription.endpoint, JSON.stringify(subscription));
+  await EDGE_CONFIG.set(subscription.endpoint, JSON.stringify(subscription));
 
   return new Response('Subscription stored', { status: 201 });
 }
