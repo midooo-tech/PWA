@@ -1,11 +1,8 @@
 // src/pages/api/subscribe.js
 
-import { createEdgeConfig } from '@vercel/edge-config';
+import { edgeConfig } from '@vercel/edge-config';
 
-// Initialize Edge Config
-const edgeConfig = createEdgeConfig();
-
-// Configure the API route
+// Configure the API route to run on the Edge Runtime
 export const config = {
   runtime: 'edge',
 };
@@ -17,7 +14,7 @@ export default async function handler(req) {
 
   const subscription = await req.json();
   
-  // Store the subscription in Edge Config
+  // Store the subscription in Edge Config using the endpoint as the key
   await edgeConfig.set(subscription.endpoint, JSON.stringify(subscription));
 
   return new Response('Subscription stored', { status: 201 });
