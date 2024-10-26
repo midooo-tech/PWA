@@ -1,8 +1,22 @@
 {
   "name": "my-pwa",
   "version": "1.0.0",
-  "scripts": "",
+  "description": "A simple PWA with push notifications",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "start": "vercel start"
+  },
   "dependencies": {
-    
-  }
+    "@vercel/edge-config": "^1.0.0",
+    "vercel": "^28.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.x"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "MIT"
 }
